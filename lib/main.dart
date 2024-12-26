@@ -1,25 +1,29 @@
+
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/features/game/views/game_view.dart';
-import 'package:tic_tac_toe/features/game/views/home_view.dart';
+import 'dart:math';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'package:tic_tac_toe/core/methods/reset_game.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+import 'core/methods/check_winner.dart';
+import 'core/methods/evaluate.dart';
+import 'core/methods/easy_ai_algorithm.dart';
+import 'core/methods/min_max_ai.dart';
+import 'features/game/views/home_view.dart';
 
-  // This widget is the root of your application.
+void main() => runApp(const TicTacToeApp());
+
+class TicTacToeApp extends StatelessWidget {
+  const TicTacToeApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      title: 'Tic Tac Toe',
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: const HomeView(),
     );
   }
 }
+
+ 
